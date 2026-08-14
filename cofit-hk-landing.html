@@ -129,16 +129,21 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 /* WA BAR */
 .wa-bar{background:var(--M);border-top:1px solid #C5E5D9;border-bottom:1px solid #C5E5D9}
-.wa-inner{max-width:var(--MW);margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.wa-l{display:flex;align-items:center;gap:16px}
-.wa-icon-box{width:48px;height:48px;background:var(--F);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.wa-icon-box svg{width:24px;height:24px}
-.wa-text strong{font-size:15px;color:var(--F);font-weight:700;display:block}
-.wa-text span{font-size:12.5px;color:var(--MU);display:block;margin-top:1px}
-.wa-icon-box.price{background:var(--A)}
-.wa-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.btn-outline{background:#fff;color:var(--F);border:1.5px solid var(--BD)}
-.btn-outline:hover{border-color:var(--F);background:var(--M)}
+.wa-inner{max-width:var(--MW);margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.wa-l{display:flex;align-items:center;gap:20px}
+.wa-icon{width:64px;height:64px;color:var(--F);flex-shrink:0}
+.wa-text strong{font-family:'Noto Serif TC',serif;font-size:21px;color:var(--F);font-weight:700;display:block}
+.wa-text span{font-size:13.5px;color:var(--MU);display:block;margin-top:4px}
+.wa-tagline{font-family:'DM Sans',sans-serif;font-style:italic;font-size:14px;color:var(--MU);display:block;margin-top:2px}
+.wa-cta{position:relative;display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,var(--F),var(--S));color:#fff;padding:12px 46px 12px 12px;border-radius:50px;flex-shrink:0;box-shadow:0 8px 22px rgba(27,74,67,.28);transition:transform .2s,box-shadow .2s}
+.wa-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(27,74,67,.35)}
+.wa-cta-icon{width:42px;height:42px;background:rgba(255,255,255,.16);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-cta-icon svg{width:22px;height:22px}
+.wa-cta-text{display:flex;flex-direction:column;line-height:1.35;white-space:nowrap}
+.wa-cta-text strong{font-size:18px;font-weight:800}
+.wa-cta-text small{font-size:11.5px;font-weight:400;opacity:.85}
+.wa-cta-arrow{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.wa-cta-arrow svg{width:14px;height:14px}
 
 /* ADVANTAGES */
 .adv-list{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
@@ -409,11 +414,25 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 <!-- WA BAR -->
 <div class="wa-bar">
   <div class="wa-inner">
-    <div class="wa-l"><div class="wa-icon-box price"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="wa-text"><strong>首次門診 HK$500</strong><span>現場付款．毋須網上預繳</span></div></div>
-    <div class="wa-actions">
-      <a href="https://wa.me/886963629025?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E9%A0%90%E7%B4%84%E9%A6%96%E6%AC%A1%E8%A9%95%E4%BC%B0" target="_blank" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24" fill="#fff" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.52 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.69 0-3.27-.49-4.62-1.33l-.33-.2-3.01.8.82-2.96-.21-.35A7.96 7.96 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg> WhatsApp 預約首次評估</a>
-      <a href="https://wa.me/886963629025?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%85%88%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%E8%A9%B3%E6%83%85" target="_blank" class="btn btn-outline btn-sm">先問客服我的情況</a>
+    <div class="wa-l">
+      <svg class="wa-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="6" width="28" height="38" rx="3"/>
+        <rect x="18" y="3" width="10" height="6" rx="2" fill="currentColor" stroke="none"/>
+        <line x1="15" y1="17" x2="28" y2="17"/>
+        <line x1="15" y1="24" x2="28" y2="24"/>
+        <line x1="15" y1="31" x2="22" y2="31"/>
+        <path d="M13.5 16.5l1.5 1.5 2.5-2.5"/>
+        <circle cx="33" cy="37" r="11"/>
+        <line x1="41" y1="45" x2="48" y2="52"/>
+        <path d="M28 37l3.5 3.5 6.5-6.5"/>
+      </svg>
+      <div class="wa-text"><strong>以醫學評估為基礎的體重管理方案</strong><span>醫生結合營養分析，針對代謝與體質作出精準建議</span><span class="wa-tagline">Speak with Our Team! Start with a simple conversation.</span></div>
     </div>
+    <a href="https://wa.me/886963629025" target="_blank" class="wa-cta">
+      <span class="wa-cta-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.52 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.69 0-3.27-.49-4.62-1.33l-.33-.2-3.01.8.82-2.96-.21-.35A7.96 7.96 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg></span>
+      <span class="wa-cta-text"><strong>WhatsApp 免費諮詢</strong><small>— 有任何問題，隨時揾我哋了解更多 —</small></span>
+      <span class="wa-cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+    </a>
   </div>
 </div>
 
