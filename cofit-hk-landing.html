@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cofit 控糖減重管理中心｜香港｜台港醫療聯手</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',-apple-system,sans-serif;color:#1A2B27;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+details summary{list-style:none}details summary::-webkit-details-marker{display:none}
+:root{--F:#1B4A43;--FD:#133831;--S:#2D8B76;--M:#EBF6F2;--A:#E5960A;--AD:#BF7C06;--ST:#F6F9F8;--MU:#5F7872;--BD:#D5E8E2;--SH:0 2px 18px rgba(27,74,67,.09);--R:12px;--MW:1160px}
+.container{max-width:var(--MW);margin:0 auto;padding:0 40px}
+.sec{padding:80px 0}.sec-mint{background:var(--M)}.sec-stone{background:var(--ST)}.center{text-align:center}
+.sec-tag{display:inline-block;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--S);margin-bottom:10px}
+.sec-title{font-family:'Noto Serif TC',serif;font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--F);line-height:1.3;margin-bottom:8px}
+.sec-en{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--MU);margin-bottom:48px;line-height:1.6}
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:700;padding:14px 32px;border-radius:40px;cursor:pointer;border:none;transition:all .2s;font-family:'Noto Sans TC',sans-serif;width:fit-content}
+.btn-amber{background:var(--A);color:#fff}.btn-amber:hover{background:var(--AD);transform:translateY(-2px);box-shadow:0 8px 24px rgba(229,150,10,.4)}
+.btn-forest{background:var(--F);color:#fff}.btn-forest:hover{background:var(--FD);transform:translateY(-2px)}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{opacity:.9}
+.btn-sm{padding:10px 24px;font-size:13.5px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 40px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.nav-logo{display:flex;align-items:center;gap:7px;color:#fff;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.3px;flex-shrink:0}
+.nav-logo svg{width:18px;height:18px;fill:#7ED8B8}
+.nav-links{display:flex;gap:2px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.78);font-size:13px;padding:6px 10px;border-radius:6px;transition:all .15s;white-space:nowrap}
+.nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav-wa{display:flex;align-items:center;gap:6px;background:#25D366;color:#fff;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.nav-wa:hover{opacity:.88}
+.nav-wa svg{width:16px;height:16px;flex-shrink:0}
+
+/* ═══ HERO — 診所背景 + 人物 mix-blend-mode multiply ═══ */
+.hero{
+  position:relative;min-height:640px;overflow:hidden;
+  display:flex;align-items:center;
+}
+/* 1. 背景：診所環境照 */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:center center;
+}
+/* 2. 左側漸層（讓文字清晰） */
+.hero-grad{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,
+    rgba(255,255,255,.92) 0%,
+    rgba(255,255,255,.78) 32%,
+    rgba(255,255,255,.38) 55%,
+    rgba(255,255,255,.0)  75%);
+}
+/* 3. 人物照：右側，mix-blend-mode multiply 讓白色消失融入背景 */
+.hero-team{
+  position:absolute;right:-2%;bottom:0;
+  width:70%;z-index:2;
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  overflow:hidden;
+}
+.hero-team img{
+  width:100%;height:auto;
+  display:block;
+}
+/* 4. 文字內容 */
+.hero-content{
+  position:relative;z-index:4;
+  padding:80px 0 80px 80px;
+  max-width:54%;
+}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(27,74,67,.08);color:var(--F);
+  font-size:12px;font-weight:700;padding:5px 14px;
+  border-radius:20px;margin-bottom:22px;
+  border:1px solid rgba(27,74,67,.15);width:fit-content
+}
+.hero-chip span{width:7px;height:7px;background:var(--S);border-radius:50%;flex-shrink:0}
+.hero-en{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(36px,4.2vw,62px);font-weight:800;
+  color:var(--F);line-height:1.05;margin-bottom:16px;letter-spacing:-.5px
+}
+.hero-zh{font-size:21px;font-weight:700;color:var(--F);margin-bottom:8px}
+.hero-italic{font-family:'DM Sans',sans-serif;font-style:italic;color:var(--MU);font-size:14px;line-height:1.55;margin-bottom:36px}
+/* 5. 浮動卡片 */
+.hcard-logo{
+  position:absolute;top:32px;right:32px;z-index:5;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(10px);
+  border-radius:12px;padding:12px 20px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 4px 20px rgba(27,74,67,.12);
+  border:1px solid rgba(255,255,255,.6)
+}
+.hcard-logo svg{width:22px;height:22px;fill:#1B4A43}
+.hcard-logo-text{font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:700;color:var(--F);white-space:nowrap}
+.hcard-logo-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU)}
+.hcard-dr{
+  position:absolute;top:110px;right:32px;z-index:5;
+  background:#fff;border-radius:12px;
+  padding:14px 20px;min-width:260px;
+  box-shadow:0 4px 24px rgba(27,74,67,.14);
+  border:1px solid #E8F4F0
+}
+.hcard-dr .dr-univ{font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--MU);margin-bottom:3px}
+.hcard-dr .dr-name{font-family:'DM Sans',sans-serif;font-size:19px;font-weight:800;color:var(--F);line-height:1.2}
+.hcard-dr .dr-title{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--S);margin-top:3px}
+.hcard-rd{
+  position:absolute;bottom:32px;right:32px;z-index:5;
+  background:rgba(27,74,67,.82);backdrop-filter:blur(8px);
+  border-radius:10px;padding:10px 18px;text-align:center;
+}
+.hcard-rd .rd-zh{font-size:13.5px;font-weight:700;color:#fff}
+.hcard-rd .rd-en{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.65);margin-top:2px}
+
+/* STAT STRIP */
+.stat-strip{background:var(--F);padding:52px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:var(--MW);margin:0 auto;padding:0 40px}
+.stat-item{text-align:center;padding:0 28px}
+.stat-item+.stat-item{border-left:1px solid rgba(255,255,255,.14)}
+.stat-num{font-family:'DM Sans',sans-serif;font-size:clamp(36px,4.5vw,58px);font-weight:700;color:#7ED8B8;line-height:1}
+.stat-num sup{font-size:20px;vertical-align:super;line-height:0}
+.stat-label{font-size:13.5px;color:rgba(255,255,255,.7);margin-top:10px;font-weight:500}
+.stat-label-en{font-family:'DM Sans',sans-serif;font-size:11.5px;color:rgba(255,255,255,.38);margin-top:3px}
+
+/* WA BAR */
+.wa-bar{background:var(--M);border-top:1px solid #C5E5D9;border-bottom:1px solid #C5E5D9}
+.wa-inner{max-width:var(--MW);margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.wa-l{display:flex;align-items:center;gap:16px}
+.wa-icon-box{width:48px;height:48px;background:var(--F);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-icon-box svg{width:24px;height:24px}
+.wa-text strong{font-size:15px;color:var(--F);font-weight:700;display:block}
+.wa-text span{font-size:12.5px;color:var(--MU);display:block;margin-top:1px}
+.wa-italic{font-family:'DM Sans',sans-serif;font-style:italic;font-size:12px;color:var(--MU);flex-shrink:0}
+
+/* ADVANTAGES */
+.adv-list{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.adv-item{display:flex;align-items:flex-start;gap:20px;background:#fff;border-radius:var(--R);padding:22px 26px;border:1px solid var(--BD);transition:box-shadow .2s}
+.adv-item:hover{box-shadow:var(--SH)}
+.adv-ico{width:52px;height:52px;border-radius:50%;background:var(--F);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.adv-ico svg{width:26px;height:26px}
+.adv-title{font-size:15.5px;font-weight:700;color:var(--F);margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.adv-title .en{font-family:'DM Sans',sans-serif;color:var(--S);font-weight:500;font-size:13px}
+.adv-desc{font-size:13.5px;color:var(--MU);line-height:1.65}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.who-card{background:#fff;border-radius:var(--R);padding:28px 18px;text-align:center;border:1.5px solid var(--BD);transition:all .2s}
+.who-card:hover{border-color:var(--S);box-shadow:var(--SH);transform:translateY(-3px)}
+.who-icon{width:72px;height:72px;margin:0 auto 16px}
+.who-title{font-size:15.5px;font-weight:700;color:var(--F);margin-bottom:8px}
+.who-desc{font-size:13px;color:var(--MU);line-height:1.65;margin-bottom:6px}
+.who-en{font-family:'DM Sans',sans-serif;font-size:11.5px;color:#9EAAA6;font-style:italic}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.feat-card{background:#fff;border-radius:var(--R);overflow:hidden;border:1px solid var(--BD);transition:box-shadow .2s}
+.feat-card:hover{box-shadow:var(--SH)}
+.feat-photo{height:160px;background:var(--M);overflow:hidden}
+.feat-photo img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.feat-card:hover .feat-photo img{transform:scale(1.05)}
+.feat-body{padding:14px 16px 20px}
+.feat-subtitle{font-size:10px;font-weight:700;color:var(--S);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
+.feat-name{font-size:14.5px;font-weight:700;color:var(--F);margin-bottom:6px;line-height:1.4}
+.feat-desc{font-size:12.5px;color:var(--MU);line-height:1.65}
+
+/* PROCESS */
+.proc-header{text-align:center;margin-bottom:48px}
+.proc-row{display:grid;gap:18px;margin-bottom:18px}
+.proc-row.r3{grid-template-columns:repeat(3,1fr)}
+.proc-row.r2{grid-template-columns:repeat(2,1fr);max-width:760px;margin-left:auto;margin-right:auto;margin-bottom:0}
+.proc-card{background:#fff;border-radius:var(--R);overflow:hidden;border:1px solid var(--BD)}
+.proc-img{height:185px;overflow:hidden;background:var(--M)}
+.proc-img img{width:100%;height:100%;object-fit:cover}
+.proc-body{padding:16px 18px 20px}
+.proc-step{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.proc-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--F);color:#fff;border-radius:50%;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;flex-shrink:0}
+.proc-th{font-size:15px;font-weight:700;color:var(--F)}
+.proc-en{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU);margin-bottom:8px}
+.proc-desc{font-size:12.5px;color:var(--MU);line-height:1.65}
+.proc-check{color:var(--S)}
+.proc-note{font-size:11.5px;color:#9EAAA6;font-style:italic;margin-top:7px}
+
+/* SCHEDULE */
+.sched-wrap{max-width:600px;margin:0 auto}
+.sched-card{background:#fff;border-radius:14px;border:2px solid var(--F);overflow:hidden;box-shadow:var(--SH)}
+.sched-head{background:var(--F);color:#fff;text-align:center;padding:18px;font-size:18px;font-weight:700;letter-spacing:.05em}
+.sched-body{display:grid;grid-template-columns:68px 1fr}
+.sched-label{background:var(--ST);border-right:1px solid var(--BD);display:flex;align-items:center;justify-content:center;min-height:160px}
+.sched-label-text{writing-mode:vertical-rl;letter-spacing:.4em;font-size:16px;font-weight:700;color:var(--F)}
+.sched-times{padding:24px 36px;display:flex;flex-direction:column;gap:20px}
+.sched-row{display:flex;align-items:baseline;gap:14px}
+.sched-day{font-family:'DM Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--S);width:50px;flex-shrink:0}
+.sched-time{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:700;color:var(--F)}
+.sched-cta{margin-top:28px;text-align:center}
+
+/* CASES */
+.cases-sec{background:var(--F);padding:80px 0}
+.cases-desc{font-size:13.5px;color:rgba(255,255,255,.6);max-width:640px;margin:12px auto 44px;line-height:1.8;text-align:center}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case-card{background:rgba(255,255,255,.06);border-radius:var(--R);border:1px solid rgba(255,255,255,.12);overflow:hidden;transition:all .2s}
+.case-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.case-img{height:0;padding-bottom:87%;position:relative;overflow:hidden}
+.case-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.case-badge{position:absolute;top:10px;left:10px;background:var(--F);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px}
+.case-body{padding:14px 16px 20px}
+.case-name{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:10px}
+.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.case-m{background:rgba(255,255,255,.07);border-radius:8px;padding:9px 11px}
+.case-m-lbl{font-size:11px;color:rgba(255,255,255,.48)}
+.case-m-val{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:#7ED8B8;line-height:1.15}
+.case-desc{font-size:12.5px;color:rgba(255,255,255,.58);line-height:1.65}
+
+/* CLINIC */
+.clinic-wrap{position:relative;overflow:hidden;height:480px}
+.clinic-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.clinic-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(27,74,67,.5) 0%,rgba(27,74,67,0) 55%)}
+.clinic-caption{position:absolute;bottom:40px;left:60px;color:#fff}
+.clinic-caption h3{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.clinic-caption p{font-family:'DM Sans',sans-serif;font-size:14px;opacity:.75}
+
+/* TRANSPORT */
+.transport-addr{font-size:14.5px;font-weight:600;color:var(--F);margin-top:8px;margin-bottom:36px}
+.transport-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.transport-card{background:#fff;border-radius:var(--R);overflow:hidden;border:1px solid var(--BD)}
+.transport-photo{height:210px;overflow:hidden}
+.transport-photo img{width:100%;height:100%;object-fit:cover}
+.transport-info{padding:14px 18px}
+.transport-exit{font-size:13.5px;font-weight:700;color:var(--F);margin-bottom:3px}
+.transport-walk{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--S)}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--BD);border-radius:var(--R);overflow:hidden;transition:border-color .2s}
+details.faq-item[open]{border-color:var(--S)}
+details.faq-item summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:18px 22px;font-size:14.5px;font-weight:700;color:var(--F);gap:16px;user-select:none}
+.faq-chevron{flex-shrink:0;width:20px;height:20px;transition:transform .25s;color:var(--S)}
+details.faq-item[open] .faq-chevron{transform:rotate(180deg)}
+.faq-answer{padding:0 22px 18px;font-size:13.5px;color:var(--MU);line-height:1.85}
+.notice-box{max-width:760px;margin:36px auto 0;background:var(--ST);border-radius:var(--R);border:1px solid var(--BD);padding:20px 26px}
+.notice-title{font-size:13.5px;font-weight:700;color:var(--F);margin-bottom:12px}
+.notice-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.notice-list li{font-size:13px;color:var(--MU);padding-left:14px;position:relative;line-height:1.7}
+.notice-list li::before{content:'·';position:absolute;left:0;color:var(--S);font-size:18px;line-height:1.3}
+.notice-list li a,.notice-tel{color:var(--S);font-weight:700}
+.notice-hl{color:var(--F);font-weight:700}
+
+/* FOOTER */
+footer{background:var(--FD);padding:56px 0 32px;text-align:center}
+.footer-brand{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:rgba(255,255,255,.5);margin-top:28px;letter-spacing:-.2px}
+.footer-brand span{color:#7ED8B8}
+.footer-contact{font-size:13px;color:rgba(255,255,255,.35);margin-top:8px}
+.footer-contact a{color:rgba(255,255,255,.5)}
+.footer-pb{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.22);margin-top:14px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .container{padding:0 24px}
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-content{padding:52px 32px;max-width:70%}
+  .hcard-logo,.hcard-dr,.hcard-rd{display:none}
+  .hero-team{width:50%}
+  .who-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-row.r3{grid-template-columns:1fr 1fr}
+  .cases-grid{grid-template-columns:repeat(2,1fr)}
+  .transport-grid{grid-template-columns:1fr 1fr}
+  .stat-grid{padding:0 24px}
+  .wa-inner{flex-wrap:wrap}
+  .wa-italic{display:none}
+}
+@media(max-width:600px){
+  .container{padding:0 16px}
+  nav{padding:0 16px;height:52px}
+  .sec{padding:56px 0}
+  .hero{min-height:auto}
+  .hero-content{padding:44px 20px 160px;max-width:100%}
+  .hero-en{font-size:clamp(32px,9vw,44px)}
+  .hero-team{width:90%;left:5%;right:5%;bottom:0}
+  .stat-grid{grid-template-columns:1fr;gap:28px;padding:0 20px}
+  .stat-item+.stat-item{border-left:none;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
+  .stat-strip{padding:44px 0}
+  .wa-inner{padding:16px}
+  .who-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .feat-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .feat-photo{height:130px}
+  .proc-row.r3,.proc-row.r2{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .clinic-wrap{height:280px}
+  .clinic-caption{left:24px;bottom:24px}
+  .transport-grid{grid-template-columns:1fr}
+  .sched-times{padding:18px;gap:18px}
+  .sched-time{font-size:17px}
+  .float-wa{position:fixed;bottom:20px;right:16px;z-index:999;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:13.5px;font-weight:700;padding:11px 18px;border-radius:28px;box-shadow:0 4px 20px rgba(37,211,102,.45);animation:wa-pulse 2.5s ease-in-out infinite}
+  .float-wa svg{width:18px;height:18px}
+}
+@media(min-width:601px){.float-wa{display:none}}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 28px rgba(37,211,102,.7)}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/886963629025" target="_blank" class="float-wa"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.52 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.69 0-3.27-.49-4.62-1.33l-.33-.2-3.01.8.82-2.96-.21-.35A7.96 7.96 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg> 免費諮詢</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">
+    <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+    cofit.
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">醫療特色</a></li>
+    <li><a href="#process">診療流程</a></li>
+    <li><a href="#schedule">門診時段</a></li>
+    <li><a href="#cases">案例分享</a></li>
+    <li><a href="#location">診所資訊</a></li>
+    <li><a href="#faq">常見問題</a></li>
+  </ul>
+  <a href="https://wa.me/886963629025" target="_blank" class="nav-wa">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.52 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.69 0-3.27-.49-4.62-1.33l-.33-.2-3.01.8.82-2.96-.21-.35A7.96 7.96 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg> <span>WhatsApp 免費諮詢</span>
+  </a>
+</nav>
+<span id="top"></span>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <!-- 診所背景 -->
+  <div class="hero-bg" style="background-image:url('https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/clinic.jpg')"></div>
+  <!-- 白色漸層，左側文字可讀 -->
+  <div class="hero-grad"></div>
+
+  <!-- 文字區塊（左側） -->
+  <div class="hero-content">
+    <div class="hero-chip"><span></span>台港專業醫療聯手 · Now in Hong Kong</div>
+    <h1 class="hero-en">Medical Weight<br>Management<br>Programme</h1>
+    <p class="hero-zh">台港專業聯手，找回你的瘦身密碼</p>
+    <p class="hero-italic">Backed by 20,000+ Clinical Cases<br>Evidence-Based &amp; Doctor-Led Approach</p>
+    <a href="https://wa.me/886963629025" target="_blank" class="btn btn-amber">立即搶先預約 ▶</a>
+  </div>
+
+  <!-- 人物照（右側，白底 multiply 融入背景） -->
+  <div class="hero-team">
+    <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/team.png" alt="宋晏仁醫師與 Cofit 營養師團隊">
+  </div>
+
+  <!-- 浮動資訊卡 -->
+  <div class="hcard-logo">
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#1B4A43"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+    <div>
+      <div class="hcard-logo-text">cofit. 控糖減重管理中心</div>
+      <div class="hcard-logo-sub">Weight Management Centre</div>
+    </div>
+  </div>
+
+  <div class="hcard-dr">
+    <div class="dr-univ">Ph.D., Cornell University Medical College, USA</div>
+    <div class="dr-name">Dr. Yen–Jen Sung, MD, PhD</div>
+    <div class="dr-title">Expert in Medical Weight Management</div>
+  </div>
+
+  <div class="hcard-rd">
+    <div class="rd-zh">美國註冊營養師團隊</div>
+    <div class="rd-en">U.S. Registered Dietitian</div>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div class="stat-item"><div class="stat-num"><span class="count" data-target="100000" data-suffix="+">0</span><sup>kg</sup></div><div class="stat-label">累積成功減重</div><div class="stat-label-en">Total Clinically Reduced</div></div>
+    <div class="stat-item"><div class="stat-num"><span class="count" data-target="20000" data-suffix="+">0</span></div><div class="stat-label">成功案例</div><div class="stat-label-en">Successful Cases</div></div>
+    <div class="stat-item"><div class="stat-num">《Nutrients》</div><div class="stat-label">國際學術期刊登刊 2024</div><div class="stat-label-en">Peer-Reviewed Publication</div></div>
+  </div>
+</div>
+
+<!-- WA BAR -->
+<div class="wa-bar">
+  <div class="wa-inner">
+    <div class="wa-l"><div class="wa-icon-box"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.52 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.69 0-3.27-.49-4.62-1.33l-.33-.2-3.01.8.82-2.96-.21-.35A7.96 7.96 0 014 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/></svg></div><div class="wa-text"><strong>以醫學評估為基礎的體重管理方案</strong><span>醫生結合營養分析，針對代謝與體質作出精準建議</span></div></div>
+    <p class="wa-italic">Start with a simple conversation.</p>
+    <a href="https://wa.me/886963629025" target="_blank" class="btn btn-wa btn-sm">WhatsApp 免費諮詢</a>
+  </div>
+</div>
+
+<!-- 三大核心優勢 -->
+<section id="features" class="sec"><div class="container"><div class="center"><p class="sec-tag">Why Cofit</p><h2 class="sec-title">Cofit 控糖減重　三大核心優勢</h2><p class="sec-en">Over 100,000 kg of clinically achieved weight loss. Now serving in Hong Kong.</p></div>
+<div class="adv-list">
+  <div class="adv-item"><div class="adv-ico"><svg viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="13" cy="13" r="10"/><path d="M13 3C10.5 8 10.5 18 13 23M13 3C15.5 8 15.5 18 13 23"/><path d="M3 13h20M3.8 8.5h18.4M3.8 17.5h18.4"/></svg></div><div><div class="adv-title">國際認證<span class="en">Internationally Recognised &amp; Published</span></div><p class="adv-desc">台灣唯一榮登《Nutrients》國際營養學期刊（2024）的減重課程，以實證醫學為基礎，讓每一步都有科學依據。</p></div></div>
+  <div class="adv-item"><div class="adv-ico"><svg viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="3"/><path d="M4 22v-4a5 5 0 0110 0v4"/><path d="M15 9a5 5 0 015 5v2h-2"/><circle cx="21" cy="17" r="2" fill="#fff" stroke="none"/></svg></div><div><div class="adv-title">專業落地<span class="en">Doctor-Led, Personalised Treatment Plans</span></div><p class="adv-desc">專科醫生 × 科學檢驗 × 國際認證營養師全程追蹤。每一份計劃都由醫療專業人員親自制定，真正做到個人化治療。</p></div></div>
+  <div class="adv-item"><div class="adv-ico"><svg viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="16" height="22" rx="3"/><polyline points="9,16 12,11 15,14 19,8"/><line x1="9" y1="21" x2="17" y2="21"/></svg></div><div><div class="adv-title">數位結合<span class="en">AI-Powered Nutrition &amp; Health Tracking</span></div><p class="adv-desc">Cofit App 每日飲食指導 × AI 智能飲食助教 × 健康數據整合，讓你的減重計劃更精準、更有效率。</p></div></div>
+</div>
+<div class="center"><a href="#" class="btn btn-amber btn-sm">點擊查看期刊文章 👆</a></div></div></section>
+
+<!-- 誰適合 -->
+<section class="sec sec-mint"><div class="container"><div class="center"><p class="sec-tag">Who Is It For</p><h2 class="sec-title">誰適合 Cofit 控糖減重？</h2><p class="sec-en">Who Is Cofit's Medical Weight Management For?</p></div>
+<div class="who-grid">
+  <div class="who-card"><div class="who-icon"><svg viewBox="0 0 56 80" fill="none"><circle cx="28" cy="13" r="9" stroke="#2D8B76" stroke-width="2.2"/><path d="M18 23 C14 34 15 48 20 58 L26 58 L26 46 H30 L30 58 L36 58 C41 48 42 34 38 23 C35 27 21 27 18 23Z" stroke="#2D8B76" stroke-width="2.2"/><line x1="26" y1="58" x2="22" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="58" x2="34" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><path d="M6 16 L8 12 L10 16 L14 18 L10 20 L8 24 L6 20 L2 18Z" fill="#2D8B76" opacity="0.6"/></svg></div><div class="who-title">體態更好看</div><p class="who-desc">穿回喜愛的衣服，線條緊緻，拍照展現自信。</p><p class="who-en">Improve body shape &amp; confidence.</p></div>
+  <div class="who-card"><div class="who-icon"><svg viewBox="0 0 56 80" fill="none"><circle cx="28" cy="13" r="9" stroke="#2D8B76" stroke-width="2.2"/><path d="M18 23 C14 34 15 48 20 58 L26 58 L26 46 H30 L30 58 L36 58 C41 48 42 34 38 23 C35 27 21 27 18 23Z" stroke="#2D8B76" stroke-width="2.2"/><line x1="26" y1="58" x2="22" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="58" x2="34" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><path d="M28 34 C28 31 24 28 22 31 C20 34 22 38.5 28 42 C34 38.5 36 34 34 31 C32 28 28 31 28 34Z" fill="#2D8B76" opacity="0.75"/></svg></div><div class="who-title">健康有氣色</div><p class="who-desc">不只減重，也希望同步調理皮膚、荷爾蒙與代謝平衡。</p><p class="who-en">Enhance metabolic health &amp; vitality.</p></div>
+  <div class="who-card"><div class="who-icon"><svg viewBox="0 0 56 80" fill="none"><circle cx="28" cy="11" r="9" stroke="#2D8B76" stroke-width="2.2"/><path d="M20 21 C17 28 18 34 22 38 Q28 43 34 38 C38 34 39 28 36 21 C33 25 23 25 20 21Z" stroke="#2D8B76" stroke-width="2.2"/><path d="M22 38 C16 43 15 54 18 62 L24 62 L24 50 H32 L32 62 L38 62 C41 54 40 43 34 38" stroke="#2D8B76" stroke-width="2.2"/><line x1="24" y1="62" x2="20" y2="72" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="62" x2="36" y2="72" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/></svg></div><div class="who-title">虛胖／梨形身材</div><p class="who-desc">四肢纖細卻內臟脂肪高，腹部肥胖難以消除。</p><p class="who-en">Stubborn fat areas &amp; body composition.</p></div>
+  <div class="who-card"><div class="who-icon"><svg viewBox="0 0 56 80" fill="none"><circle cx="28" cy="13" r="9" stroke="#2D8B76" stroke-width="2.2"/><path d="M18 23 C14 34 15 48 20 58 L26 58 L26 46 H30 L30 58 L36 58 C41 48 42 34 38 23 C35 27 21 27 18 23Z" stroke="#2D8B76" stroke-width="2.2"/><line x1="26" y1="58" x2="22" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="58" x2="34" y2="70" stroke="#2D8B76" stroke-width="2" stroke-linecap="round"/><path d="M6 36 Q3 26 8 20" stroke="#2D8B76" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2"/><polygon points="8,20 4,18 7,24" fill="#2D8B76"/><path d="M50 36 Q53 26 48 20" stroke="#2D8B76" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 2"/><polygon points="48,20 52,18 49,24" fill="#2D8B76"/></svg></div><div class="who-title">反覆復胖者</div><p class="who-desc">節食運動後效果不穩，體重容易反彈難維持。</p><p class="who-en">Repeated weight regain &amp; yo-yo dieting.</p></div>
+</div></div></section>
+
+<!-- Cofit 特色 -->
+<section class="sec"><div class="container"><div class="center"><p class="sec-tag">Our Approach</p><h2 class="sec-title">Cofit 控糖減重特色</h2><p class="sec-en">Cofit 與台灣初日醫學聯手，已累積 <strong style="color:#1B4A43">20,000+</strong> 人成功案例，專業控糖減重模式首度引進香港！</p></div>
+<div class="feat-grid">
+  <div class="feat-card"><div class="feat-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/feat1.jpg" alt="精準科學檢測"></div><div class="feat-body"><div class="feat-subtitle">找出減重卡關原因</div><div class="feat-name">精準科學檢測</div><p class="feat-desc">荷爾蒙、體組成、脂肪肝三大檢測，精準找出影響代謝的根本原因。</p></div></div>
+  <div class="feat-card"><div class="feat-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/feat2.jpg" alt="醫生、營養師一對一諮詢"></div><div class="feat-body"><div class="feat-subtitle">打造專屬健康藍圖</div><div class="feat-name">醫生、營養師<br>一對一諮詢</div><p class="feat-desc">依據檢測數據與生活狀況，量身制定個人化瘦身計畫。</p></div></div>
+  <div class="feat-card"><div class="feat-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/feat3.jpg" alt="八星期貼身照護"></div><div class="feat-body"><div class="feat-subtitle">每日飲食指導</div><div class="feat-name">八星期貼身照護<br>線上追蹤</div><p class="feat-desc">專業營養師 × Cofit App，陪你養成健康飲食習慣。</p></div></div>
+  <div class="feat-card"><div class="feat-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/feat4.jpg" alt="度身訂造減重療程"></div><div class="feat-body"><div class="feat-subtitle">承襲台灣成功模式</div><div class="feat-name">度身訂造<br>減重療程</div><p class="feat-desc">針對荷爾蒙肥胖體質分型，打造個人化減重方案。</p></div></div>
+</div></div></section>
+
+<!-- 診症流程 -->
+<section id="process" class="sec sec-stone"><div class="container"><div class="proc-header"><p class="sec-tag">Your First Visit</p><h2 class="sec-title">診症流程</h2><p class="sec-en">A structured, doctor-led process to understand your body and create a personalised plan</p></div>
+<div class="proc-row r3">
+  <div class="proc-card"><div class="proc-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/proc1.jpg" alt="荷爾蒙分析"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">1</span><div><div class="proc-th">荷爾蒙分析</div><div class="proc-en">Hormonal Assessment</div></div></div><p class="proc-desc">宋晏仁醫生 × Cofit 營養師研發「六大荷爾蒙體質評測」，評估荷爾蒙現況，規劃減重計劃。</p></div></div>
+  <div class="proc-card"><div class="proc-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/proc2.jpg" alt="身體成分分析"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">2</span><div><div class="proc-th">身體成分分析</div><div class="proc-en">Body Composition Assessment</div></div></div><p class="proc-desc"><span class="proc-check">✓</span> 五大部位肌肉量及脂肪量<br><span class="proc-check">✓</span> 內臟脂肪指數<br><span class="proc-check">✓</span> 體內年齡評估</p></div></div>
+  <div class="proc-card"><div class="proc-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/proc3.jpg" alt="脂肪肝檢查"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">3</span><div><div class="proc-th">脂肪肝檢查</div><div class="proc-en">Fatty Liver Screening</div></div></div><p class="proc-desc">非侵入性電阻抗斷層成像（EIT），精準偵測肝臟狀況。</p><p class="proc-note">*屬額外自費項目，由醫生視情況建議。</p></div></div>
+</div>
+<div class="proc-row r2">
+  <div class="proc-card"><div class="proc-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/proc4.jpg" alt="醫生及營養師諮詢"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">4</span><div><div class="proc-th">醫生及營養師諮詢</div><div class="proc-en">Doctor &amp; Dietitian Consultation</div></div></div><p class="proc-desc">一對一了解健康狀況、飲食和生活習慣，發掘引致肥胖的相關因素及潛在疾病。</p></div></div>
+  <div class="proc-card"><div class="proc-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/proc5.jpg" alt="飲食及藥物評估"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">5</span><div><div class="proc-th">飲食／保健品及藥物評估</div><div class="proc-en">Dietary &amp; Medication Planning</div></div></div><p class="proc-desc">了解個人飲食誤區，評估是否補充保健品或使用藥物進行減重輔助。</p></div></div>
+</div></div></section>
+
+<!-- 門診時段 -->
+<section id="schedule" class="sec"><div class="container"><div class="center"><p class="sec-tag">Appointments</p><h2 class="sec-title">門診時段</h2><p class="sec-en" style="margin-bottom:32px">以預約系統時段為主。歡迎 <a href="https://wa.me/886963629025" style="color:#2D8B76;font-weight:700">WhatsApp 客服</a> 詢問</p></div>
+<div class="sched-wrap"><div class="sched-card"><div class="sched-head">門診預約時段</div><div class="sched-body"><div class="sched-label"><span class="sched-label-text">時間</span></div><div class="sched-times"><div class="sched-row"><span class="sched-day">每週一</span><span class="sched-time">16:00 — 17:30</span></div><div class="sched-row"><span class="sched-day">每週五</span><span class="sched-time">16:00 — 18:00</span></div><div class="sched-row"><span class="sched-day">每週六</span><span class="sched-time">09:00 — 13:00</span></div></div></div></div>
+<div class="sched-cta"><a href="https://wa.me/886963629025" target="_blank" class="btn btn-forest">立即預約 門診諮詢</a></div></div></div></section>
+
+<!-- 案例分享 -->
+<section id="cases" class="cases-sec"><div class="container"><div class="center"><p class="sec-tag" style="color:#7ED8B8">Real Results</p><h2 class="sec-title" style="color:#fff;font-family:'Noto Serif TC',serif">案例分享</h2></div>
+<p class="cases-desc">Cofit 與台灣「初日診所」長期合作，已協助上萬名個案在不挨餓、不亂試的前提下，穩定改善體脂與健康指標。</p>
+<div class="cases-grid">
+  <div class="case-card"><div class="case-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/case1.jpg" alt="案例 馬小姐"><span class="case-badge">參加 2 期療程</span></div><div class="case-body"><div class="case-name">馬小姐｜21 歲</div><div class="case-metrics"><div class="case-m"><div class="case-m-lbl">腰圍</div><div class="case-m-val">−14.9<sup style="font-size:11px">cm</sup></div></div><div class="case-m"><div class="case-m-lbl">體重</div><div class="case-m-val">−15.9<sup style="font-size:11px">kg</sup></div></div></div><p class="case-desc">因錯誤飲食觀念，總是陷入復胖循環。現在吃飽飽也能瘦 15 公斤！</p></div></div>
+  <div class="case-card"><div class="case-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/case2.jpg" alt="案例 古小姐"><span class="case-badge">參加 2 期療程</span></div><div class="case-body"><div class="case-name">古小姐｜32 歲</div><div class="case-metrics"><div class="case-m"><div class="case-m-lbl">腰圍</div><div class="case-m-val">−6.1<sup style="font-size:11px">cm</sup></div></div><div class="case-m"><div class="case-m-lbl">體重</div><div class="case-m-val">−10.3<sup style="font-size:11px">kg</sup></div></div></div><p class="case-desc">壓力、熬夜、甲狀腺失調讓體重失控，改善發炎問題後成功減重 10 公斤！</p></div></div>
+  <div class="case-card"><div class="case-img"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/case3.jpg" alt="案例 邱先生"><span class="case-badge">參加 2 期療程</span></div><div class="case-body"><div class="case-name">邱先生｜43 歲</div><div class="case-metrics"><div class="case-m"><div class="case-m-lbl">腰圍</div><div class="case-m-val">−35<sup style="font-size:11px">cm</sup></div></div><div class="case-m"><div class="case-m-lbl">體重</div><div class="case-m-val">−29.3<sup style="font-size:11px">kg</sup></div></div></div><p class="case-desc">參加 2 期療程，成功減重 30 公斤，健康數據終於回歸正常！</p></div></div>
+</div></div></section>
+
+<!-- 據點環境 -->
+<section>
+  <div class="clinic-wrap">
+    <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/clinic.jpg" alt="Cofit 控糖減重管理中心 候診室環境">
+    <div class="clinic-overlay"></div>
+    <div class="clinic-caption"><h3>溫馨舒適的診療環境</h3><p>九龍尖沙咀亞士厘道 33 號　九龍中心 12 樓 C 室</p></div>
+  </div>
+</section>
+
+<!-- 交通資訊 -->
+<section id="location" class="sec sec-mint"><div class="container"><div class="center"><p class="sec-tag">Find Us</p><h2 class="sec-title">交通資訊</h2><p class="transport-addr">📍 門診地址：九龍尖沙咀亞士厘道 33 號九龍中心 12 樓 C 室</p></div>
+<div class="transport-grid">
+  <div class="transport-card"><div class="transport-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/map2.jpg" alt="尖東站路線圖"></div><div class="transport-info"><div class="transport-exit">🚇 尖東站 L5 出口</div><div class="transport-walk">步行約 3 分鐘</div></div></div>
+  <div class="transport-card"><div class="transport-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/images/img_16.jpg" alt="尖沙咀站路線指引"></div><div class="transport-info"><div class="transport-exit">🚇 尖沙咀站 A1 出口</div><div class="transport-walk">步行約 4 分鐘</div></div></div>
+</div></div></section>
+
+<!-- 常見問題 -->
+<section id="faq" class="sec"><div class="container"><div class="center"><p class="sec-tag">FAQ</p><h2 class="sec-title">常見問題</h2><p class="sec-en">還有其他疑問？歡迎 WhatsApp 詢問我們</p></div>
+<div class="faq-list">
+  <details class="faq-item"><summary>Q：Cofit 控糖減重門診與一般門診有何分別？<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5,8 10,13 15,8"/></svg></summary><div class="faq-answer">Cofit 控糖減重中心是由專業醫生、營養師領銜的專業團隊，透過體重管理、飲食規劃、身體數據監控，給予個案適當的減重建議。從前期診斷、資訊了解個案情況，進入度身訂造飲食方案，提供藥物協助等科學手段來幫助前來求診的患者。</div></details>
+  <details class="faq-item"><summary>Q：減重門診看多久才會見效？<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5,8 10,13 15,8"/></svg></summary><div class="faq-answer">依個人情況有所不同。一般而言，體重會在 2–4 週間開始下滑，另外療程過程醫師團隊也會持續觀察、追蹤進行持續性調整。</div></details>
+  <details class="faq-item"><summary>Q：療程過程會需要換藥嗎？<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5,8 10,13 15,8"/></svg></summary><div class="faq-answer">不需要。控糖減重門診的目的是協助個案建立健康均衡的飲食習慣，透過學習正確的飲食觀念，您不但不用挨餓，還能每餐吃飽、每天變瘦。</div></details>
+  <details class="faq-item"><summary>Q：減重門診會開藥嗎？<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5,8 10,13 15,8"/></svg></summary><div class="faq-answer">不一定。用藥與否會由醫生進行專業評估再下方案。Cofit 控糖減重門診提倡的是可長期實行的正確飲食，藥物則是作為輔助角色，即使用藥量也極低。門診強調安全、不危及健康為準則。</div></details>
+</div>
+<div class="notice-box"><div class="notice-title">📋 注意事項</div><ul class="notice-list">
+  <li>本門診預約工作委托 Cofit 幫健科技處理。</li>
+  <li>體重管理及相關治療，不屬醫療券保險計劃之覆蓋範圍，均為自費服務。</li>
+  <li><span class="notice-hl">門診費用為港幣 500 元</span>，採現場收費，<span class="notice-hl">僅能刷卡付款（不收現金）</span>。不須線上先繳費。</li>
+  <li>未滿 18 歲者，須由家長或監護人陪同看診。</li>
+  <li>如有初診預約相關問題，請 WhatsApp 聯繫 <a href="https://wa.me/886963629025" class="notice-tel">(+886) 963 629 025</a>，將有專人於工作日為您服務。</li>
+  <li>☎ 客服電話 <span class="notice-tel">(+886) 963 629 025</span>　星期一至星期五 10:00 – 18:00</li>
+</ul></div></div></section>
+
+<!-- FOOTER -->
+<footer><div class="container">
+  <a href="https://wa.me/886963629025" target="_blank" class="btn btn-amber" style="font-size:15px;padding:14px 36px">立即預約 門診諮詢 ▶</a>
+  <div class="footer-brand"><span>cofit.</span> 控糖減重管理中心</div>
+  <div class="footer-contact">香港九龍尖沙咀亞士厘道 33 號九龍中心 12 樓 C 室　|　<a href="https://wa.me/886963629025">(+886) 963 629 025</a></div>
+  <div class="footer-pb">Powered by feversocial &amp; Cofit 幫健科技</div>
+</div></footer>
+
+<script>
+const counters=document.querySelectorAll('.count');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.target,suf=el.dataset.suffix||'';const t0=performance.now();const tick=now=>{const p=Math.min((now-t0)/1800,1),v=Math.floor((1-Math.pow(1-p,3))*target);el.textContent=v.toLocaleString()+suf;if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);obs.unobserve(el);});},{threshold:.3});
+counters.forEach(c=>obs.observe(c));
+</script>
+</body>
+</html>
