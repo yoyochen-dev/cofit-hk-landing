@@ -225,13 +225,27 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 /* TRANSPORT */
 .transport-addr{font-size:14.5px;font-weight:600;color:var(--F);margin-top:8px;margin-bottom:36px}
-.transport-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.transport-card{background:#fff;border-radius:var(--R);overflow:hidden;border:1px solid var(--BD)}
-.transport-photo{height:210px;overflow:hidden}
-.transport-photo img{width:100%;height:100%;object-fit:cover}
-.transport-info{padding:14px 18px}
-.transport-exit{font-size:13.5px;font-weight:700;color:var(--F);margin-bottom:3px}
-.transport-walk{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--S)}
+.transport-card{background:#fff;border-radius:var(--R);border:1px solid var(--BD);overflow:hidden}
+.transport-tabs{display:flex}
+.transport-tab{flex:1;display:flex;align-items:center;gap:12px;padding:20px 28px;border-bottom:3px solid transparent}
+.transport-tab:first-child{border-right:1px solid var(--BD)}
+.transport-tab.active{border-bottom-color:var(--F)}
+.transport-tab-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;border:1.5px solid var(--BD);color:var(--MU)}
+.transport-tab.active .transport-tab-icon{background:var(--F);color:#fff;border-color:var(--F)}
+.transport-tab-name{font-size:15px;font-weight:700;color:var(--MU)}
+.transport-tab.active .transport-tab-name{color:var(--F)}
+.transport-tab-walk{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--MU);margin-top:2px}
+.transport-panels{display:grid;grid-template-columns:1fr 1fr}
+.transport-panel{padding:24px}
+.transport-panel:first-child{border-right:1px solid var(--BD)}
+.transport-photos{display:flex;gap:10px;height:190px;border-radius:10px;overflow:hidden;margin-bottom:18px}
+.transport-photos img{width:50%;height:100%;object-fit:cover;display:block}
+.transport-photos.single img{width:100%}
+.transport-dir{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.transport-dir-label{font-size:13px;font-weight:700;color:var(--F);margin-bottom:5px}
+.transport-dir-text{font-size:13.5px;color:var(--MU);line-height:1.65}
+.transport-maplink{font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;color:var(--S);white-space:nowrap}
+.transport-maplink:hover{color:var(--F)}
 
 /* FAQ */
 .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
@@ -269,7 +283,6 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
   .proc-row.r3{grid-template-columns:1fr 1fr}
   .cases-grid{grid-template-columns:repeat(2,1fr)}
-  .transport-grid{grid-template-columns:1fr 1fr}
   .stat-grid{padding:0 24px}
   .wa-inner{flex-wrap:wrap}
   .wa-italic{display:none}
@@ -293,7 +306,11 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   .cases-grid{grid-template-columns:1fr}
   .clinic-wrap{height:280px}
   .clinic-caption{left:24px;bottom:24px}
-  .transport-grid{grid-template-columns:1fr}
+  .transport-tabs{flex-direction:column}
+  .transport-tab:first-child{border-right:none;border-bottom:1px solid var(--BD)}
+  .transport-panels{grid-template-columns:1fr}
+  .transport-panel:first-child{border-right:none;border-bottom:1px solid var(--BD)}
+  .transport-photos{height:auto;aspect-ratio:16/9}
   .sched-times{padding:18px;gap:18px}
   .sched-time{font-size:17px}
   .float-wa{position:fixed;bottom:20px;right:16px;z-index:999;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:13.5px;font-weight:700;padding:11px 18px;border-radius:28px;box-shadow:0 4px 20px rgba(37,211,102,.45);animation:wa-pulse 2.5s ease-in-out infinite}
@@ -451,9 +468,32 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 
 <!-- 交通資訊 -->
 <section id="location" class="sec sec-mint"><div class="container"><div class="center"><p class="sec-tag">Find Us</p><h2 class="sec-title">交通資訊</h2><p class="transport-addr">📍 門診地址：九龍尖沙咀亞士厘道 33 號九龍中心 12 樓 C 室</p></div>
-<div class="transport-grid">
-  <div class="transport-card"><div class="transport-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/map2.jpg" alt="尖東站路線圖"></div><div class="transport-info"><div class="transport-exit">🚇 尖東站 L5 出口</div><div class="transport-walk">步行約 3 分鐘</div></div></div>
-  <div class="transport-card"><div class="transport-photo"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/img_16.jpg" alt="尖沙咀站路線指引"></div><div class="transport-info"><div class="transport-exit">🚇 尖沙咀站 A1 出口</div><div class="transport-walk">步行約 4 分鐘</div></div></div>
+<div class="transport-card">
+  <div class="transport-tabs">
+    <div class="transport-tab active"><div class="transport-tab-icon">🚇</div><div><div class="transport-tab-name">尖東站 L5 出口</div><div class="transport-tab-walk">步行約 3 分鐘</div></div></div>
+    <div class="transport-tab"><div class="transport-tab-icon">🚇</div><div><div class="transport-tab-name">尖沙咀站 A1 出口</div><div class="transport-tab-walk">步行約 4 分鐘</div></div></div>
+  </div>
+  <div class="transport-panels">
+    <div class="transport-panel">
+      <div class="transport-photos">
+        <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/map-l5.jpg" alt="尖東站 L5 出口路線圖">
+        <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/photo-l5.jpg" alt="尖東站 L5 出口行人隧道">
+      </div>
+      <div class="transport-dir">
+        <div><div class="transport-dir-label">📍 步行路線指引</div><div class="transport-dir-text">從尖東站 L5 出口（出站需經過一個行人隧道），<br>沿亞士厘道 Ashley Road 直行即可到達九龍中心。</div></div>
+        <a class="transport-maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%9D%E9%BE%8D%E5%B0%96%E6%B2%99%E5%92%80%E4%BA%9E%E5%A3%AB%E5%8E%98%E9%81%9333%E8%99%9F%E4%B9%9D%E9%BE%8D%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">查看 Google Maps ↗</a>
+      </div>
+    </div>
+    <div class="transport-panel">
+      <div class="transport-photos single">
+        <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/img_16.jpg" alt="尖沙咀站 A1 出口路線圖">
+      </div>
+      <div class="transport-dir">
+        <div><div class="transport-dir-label">📍 步行路線指引</div><div class="transport-dir-text">從尖沙咀站 A1 出口出來，沿海防道直行，<br>過馬路後即可到達九龍中心。</div></div>
+        <a class="transport-maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%9D%E9%BE%8D%E5%B0%96%E6%B2%99%E5%92%80%E4%BA%9E%E5%A3%AB%E5%8E%98%E9%81%9333%E8%99%9F%E4%B9%9D%E9%BE%8D%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">查看 Google Maps ↗</a>
+      </div>
+    </div>
+  </div>
 </div></div></section>
 
 <!-- 常見問題 -->
