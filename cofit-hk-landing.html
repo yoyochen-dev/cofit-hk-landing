@@ -38,7 +38,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 /* ═══ HERO — 診所背景 + 人物 mix-blend-mode multiply ═══ */
 .hero{
-  position:relative;min-height:640px;overflow:visible;
+  position:relative;min-height:790px;overflow:visible;
   display:flex;align-items:center;
 }
 /* 1. 背景：診所環境照 */
@@ -86,18 +86,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 .hero-zh{font-size:21px;font-weight:700;color:var(--F);margin-bottom:8px}
 .hero-italic{font-family:'DM Sans',sans-serif;font-style:italic;color:var(--MU);font-size:14px;line-height:1.55;margin-bottom:36px}
 /* 5. 浮動卡片 */
-.hcard-logo{
-  position:absolute;top:32px;right:32px;z-index:5;
-  background:rgba(255,255,255,.88);backdrop-filter:blur(10px);
-  border-radius:12px;padding:12px 20px;
-  display:flex;align-items:center;gap:10px;
-  box-shadow:0 4px 20px rgba(27,74,67,.12);
-  border:1px solid rgba(255,255,255,.6)
-}
-.hcard-logo-img{height:16px;width:auto;display:block}
-.hcard-logo-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU);margin-top:3px}
 .hcard-dr{
-  position:absolute;left:32%;top:-2%;z-index:5;
+  position:absolute;left:32%;top:-125px;z-index:5;
   background:#fff;border-radius:12px;
   padding:14px 20px;min-width:260px;width:max-content;
   box-shadow:0 4px 24px rgba(27,74,67,.14);
@@ -289,7 +279,7 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   nav{padding:0 20px}
   .nav-links{display:none}
   .hero-content{padding:52px 32px;max-width:70%}
-  .hcard-logo,.hcard-dr,.hcard-rd{display:none}
+  .hcard-dr,.hcard-rd{display:none}
   .hero-team{width:50%}
   .who-grid{grid-template-columns:repeat(2,1fr)}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
@@ -385,14 +375,6 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
     <div class="hcard-rd">
       <div class="rd-zh">美國註冊營養師團隊</div>
       <div class="rd-en">U.S. Registered Dietitian</div>
-    </div>
-  </div>
-
-  <!-- 浮動資訊卡 -->
-  <div class="hcard-logo">
-    <div>
-      <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/logo-horizontal.png" alt="Cofit 控糖減重管理中心" class="hcard-logo-img">
-      <div class="hcard-logo-sub">Weight Management Centre</div>
     </div>
   </div>
 </div>
