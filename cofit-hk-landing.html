@@ -38,7 +38,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 /* ═══ HERO — 診所背景 + 人物 mix-blend-mode multiply ═══ */
 .hero{
-  position:relative;min-height:640px;overflow:hidden;
+  position:relative;min-height:640px;overflow:visible;
   display:flex;align-items:center;
 }
 /* 1. 背景：診所環境照 */
@@ -58,9 +58,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 /* 3. 人物照：右側，mix-blend-mode multiply 讓白色消失融入背景 */
 .hero-team{
   position:absolute;right:-2%;bottom:0;
-  width:70%;z-index:2;
-  display:flex;align-items:flex-end;justify-content:flex-end;
-  overflow:hidden;
+  width:70%;max-width:1370px;z-index:2;
 }
 .hero-team img{
   width:100%;height:auto;
@@ -99,22 +97,22 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 .hcard-logo-img{height:16px;width:auto;display:block}
 .hcard-logo-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU);margin-top:3px}
 .hcard-dr{
-  position:absolute;top:110px;right:32px;z-index:5;
+  position:absolute;left:32%;top:-2%;z-index:5;
   background:#fff;border-radius:12px;
-  padding:14px 20px;min-width:260px;
+  padding:14px 20px;min-width:260px;width:max-content;
   box-shadow:0 4px 24px rgba(27,74,67,.14);
   border:1px solid #E8F4F0
 }
-.hcard-dr .dr-univ{font-family:'DM Sans',sans-serif;font-size:10.5px;color:var(--MU);margin-bottom:3px}
-.hcard-dr .dr-name{font-family:'DM Sans',sans-serif;font-size:19px;font-weight:800;color:var(--F);line-height:1.2}
-.hcard-dr .dr-title{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--S);margin-top:3px}
+.hcard-dr .dr-univ{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--MU);margin-bottom:3px}
+.hcard-dr .dr-name{font-family:'DM Sans',sans-serif;font-size:23px;font-weight:800;color:var(--F);line-height:1.2}
+.hcard-dr .dr-title{font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--S);margin-top:3px}
 .hcard-rd{
-  position:absolute;bottom:32px;right:32px;z-index:5;
+  position:absolute;left:63%;top:68%;z-index:5;
   background:rgba(27,74,67,.82);backdrop-filter:blur(8px);
-  border-radius:10px;padding:10px 18px;text-align:center;
+  border-radius:10px;padding:10px 18px;text-align:center;width:max-content;
 }
-.hcard-rd .rd-zh{font-size:13.5px;font-weight:700;color:#fff}
-.hcard-rd .rd-en{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.65);margin-top:2px}
+.hcard-rd .rd-zh{font-size:16px;font-weight:700;color:#fff}
+.hcard-rd .rd-en{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.65);margin-top:2px}
 
 /* STAT STRIP */
 .stat-strip{background:var(--F);padding:52px 0}
@@ -377,6 +375,17 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   <!-- 人物照（右側，白底 multiply 融入背景） -->
   <div class="hero-team">
     <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/team.png" alt="宋晏仁醫師與 Cofit 營養師團隊">
+
+    <div class="hcard-dr">
+      <div class="dr-univ">Ph.D., Cornell University Medical College, USA</div>
+      <div class="dr-name">Dr. Yen–Jen Sung, MD, PhD</div>
+      <div class="dr-title">Expert in Medical Weight Management</div>
+    </div>
+
+    <div class="hcard-rd">
+      <div class="rd-zh">美國註冊營養師團隊</div>
+      <div class="rd-en">U.S. Registered Dietitian</div>
+    </div>
   </div>
 
   <!-- 浮動資訊卡 -->
@@ -385,17 +394,6 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
       <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/logo-horizontal.png" alt="Cofit 控糖減重管理中心" class="hcard-logo-img">
       <div class="hcard-logo-sub">Weight Management Centre</div>
     </div>
-  </div>
-
-  <div class="hcard-dr">
-    <div class="dr-univ">Ph.D., Cornell University Medical College, USA</div>
-    <div class="dr-name">Dr. Yen–Jen Sung, MD, PhD</div>
-    <div class="dr-title">Expert in Medical Weight Management</div>
-  </div>
-
-  <div class="hcard-rd">
-    <div class="rd-zh">美國註冊營養師團隊</div>
-    <div class="rd-en">U.S. Registered Dietitian</div>
   </div>
 </div>
 
