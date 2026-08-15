@@ -27,8 +27,8 @@ details summary{list-style:none}details summary::-webkit-details-marker{display:
 
 /* NAV */
 nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 40px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
-.nav-logo{display:flex;align-items:center;gap:7px;color:#fff;font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.3px;flex-shrink:0}
-.nav-logo svg{width:18px;height:18px;fill:#7ED8B8}
+.nav-logo{display:flex;align-items:center;flex-shrink:0}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
 .nav-links{display:flex;gap:2px;list-style:none}
 .nav-links a{color:rgba(255,255,255,.78);font-size:13px;padding:6px 10px;border-radius:6px;transition:all .15s;white-space:nowrap}
 .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff}
@@ -97,8 +97,8 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
   border:1px solid rgba(255,255,255,.6)
 }
 .hcard-logo svg{width:22px;height:22px;fill:#1B4A43}
-.hcard-logo-text{font-family:'Noto Sans TC',sans-serif;font-size:14px;font-weight:700;color:var(--F);white-space:nowrap}
-.hcard-logo-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU)}
+.hcard-logo-img{height:16px;width:auto;display:block}
+.hcard-logo-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--MU);margin-top:3px}
 .hcard-dr{
   position:absolute;top:110px;right:32px;z-index:5;
   background:#fff;border-radius:12px;
@@ -343,8 +343,7 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 <!-- NAV -->
 <nav>
   <a href="#top" class="nav-logo">
-    <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
-    cofit.
+    <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/logo-vertical.png" alt="Cofit 控糖減重管理中心">
   </a>
   <ul class="nav-links">
     <li><a href="#features">醫療特色</a></li>
@@ -383,9 +382,9 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 
   <!-- 浮動資訊卡 -->
   <div class="hcard-logo">
-    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#1B4A43"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#1B4A43;flex-shrink:0"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
     <div>
-      <div class="hcard-logo-text">cofit. 控糖減重管理中心</div>
+      <img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/logo-horizontal.png" alt="Cofit 控糖減重管理中心" class="hcard-logo-img">
       <div class="hcard-logo-sub">Weight Management Centre</div>
     </div>
   </div>
