@@ -104,7 +104,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 }
 .hcard-rd .rd-zh{font-size:16px;font-weight:700;color:#fff}
 .hcard-rd .rd-en{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.65);margin-top:2px}
-.hero-team-cta{display:none}
+.booking-cta{display:none}
 
 /* STAT STRIP */
 .stat-strip{background:var(--F);padding:52px 0}
@@ -293,28 +293,73 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   .wa-inner{flex-wrap:wrap}
   .clinic-wrap{height:420px}
 }
+/* ── MOBILE HERO (redesigned) ── */
+@media(max-width:767px){
+  .hero{
+    display:block;
+    min-height:auto;
+    overflow:visible;
+  }
+  .hero-content{
+    position:relative;
+    padding:32px 20px 0;
+    max-width:100%;
+  }
+  .hero-en{font-size:clamp(30px,8.6vw,42px)}
+  .hero-zh{margin-bottom:14px}
+  .hero-italic{
+    font-size:clamp(12.5px,3.3vw,14px);
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  .hero-content>.btn-amber{display:none}
+  .booking-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    gap:clamp(10px,2.5vw,16px);
+    width:clamp(280px,58vw,360px);
+    min-height:clamp(56px,9vw,68px);
+    padding:0 clamp(24px,5vw,38px);
+    margin:16px 0 28px;
+    background:linear-gradient(135deg,#F6A400 0%,#EE8B00 55%,#E97B00 100%);
+    color:#fff;
+    border:2px solid rgba(255,248,224,.95);
+    border-radius:999px;
+    box-shadow:0 8px 18px rgba(93,54,0,.28),inset 0 1px 0 rgba(255,255,255,.35);
+    font-size:clamp(20px,5.6vw,28px);
+    font-weight:800;line-height:1;white-space:nowrap;text-decoration:none;
+  }
+  .booking-cta:active{filter:brightness(1.04)}
+  .booking-cta__arrow{
+    width:0;height:0;flex:0 0 auto;
+    border-top:9px solid transparent;
+    border-bottom:9px solid transparent;
+    border-left:14px solid #fff;
+  }
+  .hero-team{
+    position:relative;width:100%;left:0;right:0;bottom:auto;max-width:none;
+    margin:0;overflow:hidden;height:70vw;
+  }
+  .team-zoom{position:relative;width:160%;left:-30%;top:0}
+  .team-zoom img{width:100%;height:auto;display:block}
+  .hcard-dr,.hcard-rd{
+    display:block;position:absolute;top:auto;bottom:clamp(10px,2.5vw,18px);z-index:5;
+    min-width:0;max-width:clamp(140px,42vw,190px);width:auto;height:auto;
+    padding:7px 10px;border-radius:9px;box-shadow:0 3px 12px rgba(27,74,67,.18);
+  }
+  .hcard-dr{left:clamp(12px,4vw,28px)}
+  .hcard-dr .dr-univ{font-size:clamp(7px,2vw,8.5px);margin-bottom:1px;line-height:1.25}
+  .hcard-dr .dr-name{font-size:clamp(12px,3.4vw,15px);line-height:1.2}
+  .hcard-dr .dr-title{font-size:clamp(7.5px,2.1vw,9px);margin-top:1px;line-height:1.25}
+  .hcard-rd{right:clamp(12px,4vw,28px);left:auto}
+  .hcard-rd .rd-zh{font-size:clamp(11px,3vw,13px);line-height:1.25}
+  .hcard-rd .rd-en{font-size:clamp(7.5px,2.1vw,9px)}
+}
 @media(max-width:600px){
   .container{padding:0 16px}
   nav{padding:0 16px;height:52px;gap:8px}
   .nav-wa span{display:none}
   .nav-wa{padding:9px}
   .sec{padding:56px 0}
-  .hero{min-height:auto;flex-direction:column;align-items:stretch}
-  .hero-content{position:relative;padding:36px 20px 20px;max-width:100%}
-  .hero-content .btn-amber{display:none}
-  .hero-en{font-size:clamp(32px,9vw,44px)}
-  .hero-italic{margin-bottom:20px}
-  .hero-team{position:relative;width:100%;left:0;right:0;bottom:auto;max-width:none;overflow:hidden;height:78vw}
-  .hero-team img{width:142%;max-width:142%;height:auto;position:absolute;left:-19%;top:0}
-  .hcard-dr,.hcard-rd{display:block;position:absolute;top:auto;min-width:0;width:auto;height:auto;padding:8px 12px;border-radius:9px;box-shadow:0 3px 12px rgba(27,74,67,.18)}
-  .hcard-dr{left:12px;bottom:76px}
-  .hcard-dr .dr-univ{font-size:8.5px;margin-bottom:1px}
-  .hcard-dr .dr-name{font-size:14px}
-  .hcard-dr .dr-title{font-size:9px;margin-top:1px}
-  .hcard-rd{right:12px;bottom:76px;left:auto;padding:8px 12px}
-  .hcard-rd .rd-zh{font-size:12px}
-  .hcard-rd .rd-en{font-size:8.5px}
-  .hero-team-cta{display:flex;position:absolute;left:16px;right:16px;bottom:20px;justify-content:center;z-index:6}
   .stat-grid{grid-template-columns:1fr;gap:28px;padding:0 20px}
   .stat-item+.stat-item{border-left:none;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
   .stat-strip{padding:44px 0}
@@ -378,11 +423,17 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
     <p class="hero-zh">台港專業聯手，找回你的瘦身密碼</p>
     <p class="hero-italic">Backed by 20,000+ Clinical Cases<br>Evidence-Based &amp; Doctor-Led Approach</p>
     <a href="https://cofithkweightloss.simplybook.asia/v2/?_gl=1*1b5wd0g*_gcl_au*MjAyMjg4ODQ4OS4xNzg2NTI5ODk1Li0uLS4xNzg2NzY4MTY0LjE5NDEyMjcxOTcuMTc4Njc2ODE2NS4xNzg2NzY4NTI4*_ga*MTEwODM1OTkzMC4xNzg2NTI5ODk1*_ga_559M35RPC4*czE3ODY3NjgxNjQkbzEyJGcxJHQxNzg2NzY4NzIyJGo0OCRsMCRoMA..#book/category/8/service/40/count/1/provider/any/" target="_blank" class="btn btn-amber">立即搶先預約 ▶</a>
+    <a href="https://cofithkweightloss.simplybook.asia/v2/?_gl=1*1b5wd0g*_gcl_au*MjAyMjg4ODQ4OS4xNzg2NTI5ODk1Li0uLS4xNzg2NzY4MTY0LjE5NDEyMjcxOTcuMTc4Njc2ODE2NS4xNzg2NzY4NTI4*_ga*MTEwODM1OTkzMC4xNzg2NTI5ODk1*_ga_559M35RPC4*czE3ODY3NjgxNjQkbzEyJGcxJHQxNzg2NzY4NzIyJGo0OCRsMCRoMA..#book/category/8/service/40/count/1/provider/any/" target="_blank" class="booking-cta">
+      <span>立即搶先預約</span>
+      <span class="booking-cta__arrow" aria-hidden="true"></span>
+    </a>
   </div>
 
   <!-- 人物照（右側，白底 multiply 融入背景） -->
   <div class="hero-team">
-    <img width="1400" height="649" src="./team.png" alt="宋晏仁醫師與 Cofit 營養師團隊">
+    <div class="team-zoom">
+      <img width="1400" height="649" src="./team.png" alt="宋晏仁醫師與 Cofit 營養師團隊">
+    </div>
 
     <div class="hcard-dr">
       <div class="dr-univ">Ph.D., Cornell University Medical College, USA</div>
@@ -394,8 +445,6 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
       <div class="rd-zh">美國註冊營養師團隊</div>
       <div class="rd-en">U.S. Registered Dietitian</div>
     </div>
-
-    <a href="https://cofithkweightloss.simplybook.asia/v2/?_gl=1*1b5wd0g*_gcl_au*MjAyMjg4ODQ4OS4xNzg2NTI5ODk1Li0uLS4xNzg2NzY4MTY0LjE5NDEyMjcxOTcuMTc4Njc2ODE2NS4xNzg2NzY4NTI4*_ga*MTEwODM1OTkzMC4xNzg2NTI5ODk1*_ga_559M35RPC4*czE3ODY3NjgxNjQkbzEyJGcxJHQxNzg2NzY4NzIyJGo0OCRsMCRoMA..#book/category/8/service/40/count/1/provider/any/" target="_blank" class="btn btn-amber hero-team-cta">立即搶先預約 ▶</a>
   </div>
 </div>
 
