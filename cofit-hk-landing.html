@@ -38,7 +38,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 /* ═══ HERO — 診所背景 + 人物 mix-blend-mode multiply ═══ */
 .hero{
-  position:relative;min-height:790px;overflow:visible;
+  position:relative;min-height:min(32.5vw + 150px, 786px);overflow:visible;
   display:flex;align-items:center;
 }
 /* 1. 背景：診所環境照 */
@@ -269,8 +269,8 @@ details.faq-item[open] .faq-chevron{transform:rotate(180deg)}
 
 /* FOOTER */
 footer{background:var(--FD);padding:56px 0 32px;text-align:center}
-.footer-brand{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;color:rgba(255,255,255,.5);margin-top:28px;letter-spacing:-.2px}
-.footer-brand span{color:#7ED8B8}
+.footer-brand{margin-top:28px}
+.footer-brand img{height:28px;width:auto;margin:0 auto;filter:brightness(0) invert(1);opacity:.55}
 .footer-contact{font-size:13px;color:rgba(255,255,255,.35);margin-top:8px}
 .footer-contact a{color:rgba(255,255,255,.5)}
 .footer-pb{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.22);margin-top:14px}
@@ -567,7 +567,7 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   <details class="faq-item"><summary>Q：減重門診會開藥嗎？<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5,8 10,13 15,8"/></svg></summary><div class="faq-answer">不一定。用藥與否會由醫生進行專業評估再下方案。Cofit 控糖減重門診提倡的是可長期實行的正確飲食，藥物則是作為輔助角色，即使用藥量也極低。門診強調安全、不危及健康為準則。</div></details>
 </div>
 <div class="notice-box"><div class="notice-title">📋 注意事項</div><ul class="notice-list">
-  <li>本門診預約工作委托 Cofit 幫健科技處理。</li>
+  <li>本門診預約工作委託 Cofit 群健科技處理。</li>
   <li>體重管理及相關治療，不屬醫療券保險計劃之覆蓋範圍，均為自費服務。</li>
   <li><span class="notice-hl">門診費用為港幣 500 元</span>，採現場收費，<span class="notice-hl">僅能刷卡付款（不收現金）</span>。不須線上先繳費。</li>
   <li>未滿 18 歲者，須由家長或監護人陪同看診。</li>
@@ -578,9 +578,9 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 <!-- FOOTER -->
 <footer><div class="container">
   <a href="https://cofithkweightloss.simplybook.asia/v2/?_gl=1*1b5wd0g*_gcl_au*MjAyMjg4ODQ4OS4xNzg2NTI5ODk1Li0uLS4xNzg2NzY4MTY0LjE5NDEyMjcxOTcuMTc4Njc2ODE2NS4xNzg2NzY4NTI4*_ga*MTEwODM1OTkzMC4xNzg2NTI5ODk1*_ga_559M35RPC4*czE3ODY3NjgxNjQkbzEyJGcxJHQxNzg2NzY4NzIyJGo0OCRsMCRoMA..#book/category/8/service/40/count/1/provider/any/" target="_blank" class="btn btn-amber" style="font-size:15px;padding:14px 36px">立即預約 門診諮詢 ▶</a>
-  <div class="footer-brand"><span>cofit.</span> 控糖減重管理中心</div>
+  <div class="footer-brand"><img src="https://raw.githubusercontent.com/yoyochen-dev/cofit-hk-landing/main/logo-horizontal.png" alt="Cofit 控糖減重管理中心"></div>
   <div class="footer-contact">香港九龍尖沙咀亞士厘道 33 號九龍中心 12 樓 C 室　|　<a href="https://wa.me/886963629025">(+886) 963 629 025</a></div>
-  <div class="footer-pb">Powered by feversocial &amp; Cofit 幫健科技</div>
+  <div class="footer-pb">Powered by feversocial &amp; Cofit 群健科技</div>
 </div></footer>
 
 <script>
