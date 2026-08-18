@@ -17,6 +17,10 @@
     preload.href = './clinic-hero.webp';
     preload.fetchPriority = 'high';
     document.head.appendChild(preload);
+    document.addEventListener('DOMContentLoaded', function(){
+      var teamImage = document.querySelector('.hero-team img[data-src]');
+      if(teamImage) teamImage.src = teamImage.dataset.src;
+    });
   }
 })();
 </script>
@@ -477,7 +481,7 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   <!-- 人物照（右側，白底 multiply 融入背景） -->
   <div class="hero-team">
     <div class="team-zoom">
-      <img width="1400" height="649" src="./team-hero.webp" fetchpriority="high" decoding="async" alt="宋晏仁醫師與 Cofit 營養師團隊">
+      <img width="1400" height="649" data-src="./team-hero.webp" fetchpriority="high" decoding="async" alt="宋晏仁醫師與 Cofit 營養師團隊">
     </div>
 
     <div class="hcard-dr">
