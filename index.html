@@ -44,7 +44,7 @@ html[data-part="cases"] body{background:var(--F)}
 html[data-part="programme"] body{background:var(--ST)}
 html[data-part="info"] body{background:#fff}
 html[data-part],html[data-part] body{overflow-y:hidden!important;overscroll-behavior-y:none}
-@media(min-width:768px){html[data-part="intro"] .hero{min-height:clamp(640px,calc(32.5vw + 150px),786px)}}
+@media(min-width:768px){html[data-part="intro"] .hero{min-height:640px}}
 .container{max-width:var(--MW);margin:0 auto;padding:0 40px}
 .sec{padding:80px 0}.sec-mint{background:var(--M)}.sec-stone{background:var(--ST)}.center{text-align:center}
 .sec-tag{display:inline-block;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--S);margin-bottom:10px}
@@ -126,7 +126,7 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 .hero-content>.btn-amber:hover{background:linear-gradient(135deg,#F9AA00 0%,#F09100 55%,#EC8000 100%);box-shadow:0 11px 26px rgba(139,80,0,.38)}
 /* 5. 浮動卡片 */
 .hcard-dr{
-  position:absolute;left:32%;top:-125px;z-index:5;
+  position:absolute;left:32%;top:clamp(-125px,calc(28.75vw - 535px),0px);z-index:5;
   background:#fff;border-radius:12px;
   padding:14px 20px;min-width:260px;width:max-content;
   box-shadow:0 4px 24px rgba(27,74,67,.14);
