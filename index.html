@@ -257,6 +257,10 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 .video-copy p{font-size:14px;color:var(--MU);line-height:1.8}
 .video-embed{max-width:960px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 14px 38px rgba(27,74,67,.2)}
 .video-embed iframe{display:block;width:100%;height:100%;border:0}
+.video-poster{display:none;position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat;touch-action:pan-y}
+.video-poster::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.28))}
+.video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:74px;height:52px;border-radius:14px;background:#e62117;color:#fff;font-size:27px;line-height:1;box-shadow:0 7px 22px rgba(0,0,0,.32)}
+@media(max-width:767px){.video-embed{position:relative}.video-poster{display:block}.video-embed iframe:not([src]){visibility:hidden}}
 .cases-cta{display:flex;justify-content:center;margin-top:38px}
 .cases-book-btn{
   display:inline-flex;align-items:center;justify-content:center;gap:11px;
@@ -573,7 +577,8 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   <p>宋晏仁醫生受邀登上近百萬訂閱的 AmazingTalk Show，分享香港的 Cofit 控糖減重中心如何複製成功模式，結合醫學評估、營養照護與持續跟進，為顧客提供更有系統、個人化的體重管理方案。</p>
 </div>
 <div class="video-embed">
-  <iframe src="https://www.youtube-nocookie.com/embed/ZHXzM67ZjWg?start=980&amp;rel=0" loading="lazy" title="Cofit 醫學減重影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <button class="video-poster" type="button" aria-label="播放宋晏仁醫生 AmazingTalk Show 訪談影片" style="background-image:url('https://i.ytimg.com/vi/ZHXzM67ZjWg/maxresdefault.jpg')"><span class="video-play" aria-hidden="true">▶</span></button>
+  <iframe data-src="https://www.youtube-nocookie.com/embed/ZHXzM67ZjWg?start=980&amp;rel=0" loading="lazy" title="Cofit 醫學減重影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div></div></section>
 
 <!-- 案例分享 -->
@@ -712,6 +717,22 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 </div></footer>
 
 <script>
+(function(){
+  var frame = document.querySelector('.video-embed iframe[data-src]');
+  var poster = document.querySelector('.video-poster');
+  if(!frame) return;
+  function loadVideo(autoplay){
+    if(frame.src) return;
+    frame.src = frame.dataset.src + (autoplay ? '&autoplay=1' : '');
+    if(poster) poster.style.display = 'none';
+    frame.style.visibility = 'visible';
+  }
+  if(!window.matchMedia('(max-width: 767px)').matches){
+    loadVideo(false);
+  }else if(poster){
+    poster.addEventListener('click', function(){ loadVideo(true); }, {once:true});
+  }
+})();
 const counters=document.querySelectorAll('.count');
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.target,suf=el.dataset.suffix||'';const t0=performance.now();const tick=now=>{const p=Math.min((now-t0)/1800,1),v=Math.floor((1-Math.pow(1-p,3))*target);el.textContent=v.toLocaleString()+suf;if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);obs.unobserve(el);});},{threshold:.3});
 counters.forEach(c=>{if(c.offsetParent!==null)obs.observe(c)});
