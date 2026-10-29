@@ -6,6 +6,9 @@
 <title>Cofit 控糖減重管理中心｜香港｜台港醫療聯手</title>
 <script>
 (function(){
+  if(location.pathname.endsWith('/hero-preview.html')){
+    document.documentElement.dataset.preview = 'true';
+  }
   var part = new URLSearchParams(location.search).get('part');
   if(['intro','advantages','cases','programme','info'].includes(part)){
     document.documentElement.dataset.part = part;
@@ -37,6 +40,7 @@ details summary{list-style:none}details summary::-webkit-details-marker{display:
 html[data-part] nav,html[data-part] #top,html[data-part] .float-book{display:none!important}
 html[data-part]{scroll-behavior:auto!important;overflow-x:hidden!important;overflow-y:hidden!important;overscroll-behavior:auto!important;touch-action:pan-y!important}
 html[data-part] body{overflow-x:hidden!important;overflow-y:hidden!important;overscroll-behavior:auto!important;touch-action:pan-y!important}
+html[data-preview="true"],html[data-preview="true"] body{overflow-y:auto!important;overscroll-behavior-y:auto!important;touch-action:pan-y!important}
 html[data-part] .page-slice{display:none!important}
 html[data-part="intro"] .slice-intro,
 html[data-part="advantages"] .slice-advantages,
