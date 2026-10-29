@@ -230,9 +230,10 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 
 
 /* PROCESS VIDEO PREVIEW */
+.process-video-stage{position:relative;max-width:760px;margin:-20px auto 36px;z-index:20}
 .process-video-teaser{
-  max-width:760px;margin:-20px auto 36px;display:grid;grid-template-columns:150px 1fr;
-  align-items:center;background:#fff;border:1px solid var(--BD);border-radius:14px;
+  width:100%;display:grid;grid-template-columns:150px 1fr;align-items:center;text-align:left;
+  font-family:inherit;cursor:pointer;background:#fff;border:1px solid var(--BD);border-radius:14px;
   overflow:hidden;box-shadow:var(--SH);transition:transform .2s,box-shadow .2s
 }
 .process-video-teaser:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(27,74,67,.14)}
@@ -245,13 +246,23 @@ nav{position:sticky;top:0;z-index:1000;background:var(--F);display:flex;align-it
 .process-video-title{font-size:17px;font-weight:800;color:var(--F);line-height:1.4}
 .process-video-desc{font-size:12.5px;color:var(--MU);margin-top:3px;line-height:1.55}
 .process-video-link{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-size:12.5px;font-weight:800;color:var(--A)}
+.process-video-modal[hidden]{display:none}
+.process-video-modal{position:absolute;z-index:50;left:50%;top:-12px;transform:translateX(-50%);width:min(360px,calc(100vw - 32px))}
+.process-video-window{position:relative;background:#102f2a;border:1px solid rgba(255,255,255,.32);border-radius:18px;padding:42px 12px 12px;box-shadow:0 18px 55px rgba(0,0,0,.42)}
+.process-video-close{position:absolute;right:10px;top:8px;width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font:500 26px/30px Arial,sans-serif;cursor:pointer}
+.process-video-close:hover{background:rgba(255,255,255,.28)}
+.process-video-frame{width:100%;aspect-ratio:9/16;max-height:540px;border-radius:11px;overflow:hidden;background:#000}
+.process-video-frame iframe{display:block;width:100%;height:100%;border:0}
 @media(max-width:600px){
-  .process-video-teaser{grid-template-columns:108px 1fr;margin:-22px 0 28px;border-radius:12px}
+  .process-video-stage{margin:-12px 0 18px}
+  .process-video-teaser{grid-template-columns:108px 1fr;border-radius:12px}
   .process-video-thumb{height:132px}
   .process-video-copy{padding:12px 13px}
   .process-video-title{font-size:15px}
   .process-video-desc{font-size:11.5px;line-height:1.45}
   .process-video-link{font-size:12px;margin-top:5px}
+  .process-video-modal{top:-8px;width:min(330px,calc(100vw - 24px))}
+  .process-video-frame{max-height:510px}
 }
 
 /* SCHEDULE */
@@ -780,7 +791,8 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 
 <!-- 診症流程 -->
 <section id="process" class="sec sec-stone page-slice slice-programme"><div class="container"><div class="proc-header"><p class="sec-tag">Your First Visit</p><h2 class="sec-title">診症流程</h2><p class="sec-en">A structured, doctor-led process to understand your body and create a personalised plan</p></div>
-<a class="process-video-teaser" href="https://youtube.com/shorts/ze_M_L3XY-0" target="_blank" rel="noopener" aria-label="觀看香港 Cofit 初診流程短影音">
+<div class="process-video-stage">
+<button class="process-video-teaser" type="button" aria-haspopup="dialog" aria-controls="processVideoModal">
   <div class="process-video-thumb">
     <img src="https://i.ytimg.com/vi/ze_M_L3XY-0/hqdefault.jpg" loading="lazy" decoding="async" alt="香港 Cofit 初診流程短影音">
     <div class="process-video-play" aria-hidden="true"><span>▶</span></div>
@@ -789,9 +801,18 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
     <div class="process-video-kicker">Clinic Walkthrough</div>
     <div class="process-video-title">第一次來看診，會經歷甚麼？</div>
     <div class="process-video-desc">用短影音快速了解香港 Cofit 的初診流程與現場服務。</div>
-    <div class="process-video-link">點擊觀看 60 秒短影音 ↗</div>
+    <div class="process-video-link">點擊觀看 60 秒短影音</div>
   </div>
-</a>
+</button>
+<div class="process-video-modal" id="processVideoModal" role="dialog" aria-modal="true" aria-label="香港 Cofit 初診流程短影音" hidden>
+  <div class="process-video-window">
+    <button class="process-video-close" type="button" aria-label="關閉影片">×</button>
+    <div class="process-video-frame">
+      <iframe data-src="https://www.youtube-nocookie.com/embed/ze_M_L3XY-0?rel=0&amp;playsinline=1" title="香港 Cofit 初診流程短影音" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</div>
 <div class="proc-row r3">
   <div class="proc-card"><div class="proc-img"><img width="1000" height="828" loading="lazy" decoding="async" src="./proc1.jpg" alt="荷爾蒙分析"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">1</span><div><div class="proc-th">荷爾蒙分析</div><div class="proc-en">Hormonal Assessment</div></div></div><p class="proc-desc">宋晏仁醫生 × Cofit 營養師研發「六大荷爾蒙體質評測」，評估荷爾蒙現況，規劃減重計劃。</p></div></div>
   <div class="proc-card"><div class="proc-img"><img width="1000" height="828" loading="lazy" decoding="async" src="./proc2.jpg" alt="身體成分分析"></div><div class="proc-body"><div class="proc-step"><span class="proc-num">2</span><div><div class="proc-th">身體成分分析</div><div class="proc-en">Body Composition Assessment</div></div></div><p class="proc-desc"><span class="proc-check">✓</span> 五大部位肌肉量及脂肪量<br><span class="proc-check">✓</span> 內臟脂肪指數<br><span class="proc-check">✓</span> 體內年齡評估</p></div></div>
@@ -904,6 +925,29 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   <div class="footer-contact">香港九龍尖沙咀亞士厘道 33 號九龍中心 12 樓 C 室　|　<a href="https://wa.me/886963629025">(+886) 963 629 025</a></div>
   <div class="footer-pb">Powered by feversocial &amp; Cofit 群健科技</div>
 </div></footer>
+
+<script>
+(function(){
+  var trigger=document.querySelector('.process-video-teaser');
+  var modal=document.getElementById('processVideoModal');
+  if(!trigger||!modal)return;
+  var close=modal.querySelector('.process-video-close');
+  var frame=modal.querySelector('iframe[data-src]');
+  function openVideo(){
+    modal.hidden=false;
+    if(frame&&!frame.src) frame.src=frame.dataset.src+'&autoplay=1';
+    close.focus();
+  }
+  function closeVideo(){
+    modal.hidden=true;
+    if(frame) frame.removeAttribute('src');
+    trigger.focus();
+  }
+  trigger.addEventListener('click',openVideo);
+  close.addEventListener('click',closeVideo);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeVideo();});
+})();
+</script>
 
 <script>
 (function(){
