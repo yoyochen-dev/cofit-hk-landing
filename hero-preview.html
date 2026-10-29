@@ -609,6 +609,25 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
   .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 26px}
   .hero-action{width:100%;min-width:0;min-height:50px;padding:0 10px;font-size:clamp(13px,3.65vw,16px)}
 }
+@media(max-width:600px){
+  html[data-part="intro"] .stat-strip{padding:26px 0}
+  html[data-part="intro"] .stat-grid{grid-template-columns:repeat(3,1fr);gap:0;padding:0 8px}
+  html[data-part="intro"] .stat-item{padding:0 5px}
+  html[data-part="intro"] .stat-item+.stat-item{border-top:0;border-left:1px solid rgba(255,255,255,.14);padding-top:0}
+  html[data-part="intro"] .stat-num{font-size:clamp(23px,7vw,30px)}
+  html[data-part="intro"] .stat-num sup{font-size:11px}
+  html[data-part="intro"] .stat-label{font-size:10.5px;line-height:1.35;margin-top:6px}
+  html[data-part="intro"] .stat-label-en{font-size:8.5px;line-height:1.3}
+  html[data-part="intro"] .video-featured{padding:30px 0 24px}
+  html[data-part="intro"] .video-copy{margin:0 auto 12px}
+  html[data-part="intro"] .video-copy h3{font-size:22px;line-height:1.35}
+  html[data-part="intro"] .video-copy .video-role{font-size:13px;line-height:1.5}
+  html[data-part="intro"] .video-copy p{font-size:12.5px;line-height:1.6}
+  html[data-part="intro"] .video-embed{height:168px;aspect-ratio:auto}
+  html[data-part="programme"] .slice-programme{padding:30px 0}
+  html[data-part="programme"] .proc-header{margin-bottom:20px}
+  html[data-part="programme"] .process-video-teaser{margin:-12px 0 18px}
+}
 @media(max-width:350px){.hero-actions{grid-template-columns:1fr}}
 </style>
 </head>
@@ -731,7 +750,7 @@ footer{background:var(--FD);padding:56px 0 32px;text-align:center}
 
 
 <!-- 媒體專訪 -->
-<section class="sec page-slice slice-intro"><div class="container">
+<section class="sec page-slice slice-intro video-featured"><div class="container">
 <div class="video-copy">
   <p class="sec-tag">媒體專訪・近百萬訂閱節目</p>
   <h3>宋晏仁醫生登上 AmazingTalk Show</h3>
